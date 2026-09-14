@@ -1,6 +1,6 @@
 cask "caffold" do
-  version "0.10.0"
-  sha256 "cb204406777d70fbf8f8ea8c62d766bd1d791e7ad670fdf8fe0b66c018391d2b"
+  version "0.11.0"
+  sha256 "6e876d52f6333bbb3c396cb291170e0bdc419b40c849f073515cf4d431b69312"
 
   url "https://github.com/panarch/caffold/releases/download/v#{version}/Caffold-Server-#{version}-macos-arm64.zip"
   name "Caffold Server"
@@ -13,10 +13,8 @@ cask "caffold" do
   app "Caffold Server.app"
   binary "#{appdir}/Caffold Server.app/Contents/Resources/caffold", target: "caffold"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/Caffold Server.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Caffold Server.app"]
   end
 
   zap trash: [
