@@ -1,6 +1,6 @@
 cask "caffold" do
-  version "0.17.4"
-  sha256 "dde86d2ee5e979f595aeab3da8d46184242bc4315135cedd105b4539f1f73b26"
+  version "0.18.0"
+  sha256 "872ffceec3a6bcbc2ce4f64b190e332b889942c1c70b709c0c5be368fde5bdba"
 
   url "https://github.com/panarch/caffold/releases/download/v#{version}/Caffold-Server-#{version}-macos-arm64.zip"
   name "Caffold Server"
